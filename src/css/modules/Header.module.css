@@ -1,0 +1,20 @@
+.headerBg{
+  background-color: #202024;
+}
+.header{
+  display: flex;
+  padding: 1.125rem ;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-content: center;
+  gap: 0.9rem;
+}
+
+.header strong{
+  color: #E1E1E6;
+  font: 700 1.625rem/1.6 'Roboto',sans-serif;
+}
+.headerImg img{
+  height: 3.125rem;
+}
