@@ -1,5 +1,6 @@
 import styles from '../css/modules/Post.module.css';
 import React from 'react';
+import { Comment } from './Comment';
 
 const Post = () => {
   const [comment, setComment] = React.useState('');
@@ -45,6 +46,9 @@ const Post = () => {
         />
         {comment && <button type="submit">Comentar</button>}
       </form>
+      <div className={styles.commentList}>
+        <Comment />
+      </div>
     </article>
   );
 };
