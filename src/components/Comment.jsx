@@ -1,9 +1,10 @@
 import styles from '../css/modules/Comment.module.css';
 import Trash from '../../src/assets/trash.svg?react';
+import { Avatar } from './Avatar';
 export function Comment() {
   return (
     <div className={styles.comment}>
-      <img src="https://github.com/guilhermezuriel.png" alt="" />
+      <Avatar hasBorder={false} src="https://github.com/guilhermezuriel.png" />
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>

@@ -1,6 +1,7 @@
 import styles from '../css/modules/Post.module.css';
 import React from 'react';
 import { Comment } from './Comment';
+import { Avatar } from './Avatar';
 
 const Post = () => {
   const [comment, setComment] = React.useState('');
@@ -8,11 +9,7 @@ const Post = () => {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://github.com/guilhermezuriel.png"
-            alt="profile pic"
-          />
+          <Avatar src="https://github.com/guilhermezuriel.png" />
           <div className={styles.authorInfo}>
             <strong>Guilherme Zuriel</strong>
             <span>Web Developer</span>
