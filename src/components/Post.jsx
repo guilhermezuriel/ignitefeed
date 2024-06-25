@@ -19,12 +19,20 @@ const Post = ({ author, publishedAt, content }) => {
   });
   function handleCreateNewComment() {
     event.preventDefault();
-    const newCommment = event.target.comment.value;
-    setComments([...comments, newCommment]);
+
+    setComments([...comments, newCommmentText]);
     setNewCommentText('');
   }
-  function deleteComment(comment) {
-    console.log('deletar comentario', comment);
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value);
+  }
+  function deleteComment(commentToDelete) {
+    const commentsWithoutOne = comments.filter((comment) => {
+      return comment !== commentToDelete;
+    });
+
+    setComments(commentsWithoutOne);
   }
   return (
     <article className={styles.post}>
@@ -62,9 +70,7 @@ const Post = ({ author, publishedAt, content }) => {
           placeholder="Deixe um comentário"
           value={newCommmentText}
           name="comment"
-          onChange={({ target }) => {
-            setNewCommentText(target.value);
-          }}
+          onChange={handleNewCommentChange}
         />
         {comments && <button type="submit">Comentar</button>}
       </form>
