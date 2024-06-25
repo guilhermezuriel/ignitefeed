@@ -1,7 +1,7 @@
 import styles from '../css/modules/Comment.module.css';
 import Trash from '../../src/assets/trash.svg?react';
 import { Avatar } from './Avatar';
-export function Comment() {
+export function Comment({ content }) {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src="https://github.com/guilhermezuriel.png" />
@@ -16,7 +16,7 @@ export function Comment() {
               <Trash />
             </button>
           </header>
-          <p>Muito bom, Devon. Parabéns!</p>
+          <p>{content}</p>
         </div>
         <footer>
           <button>
