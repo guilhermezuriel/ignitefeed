@@ -25,17 +25,17 @@ function App() {
     {
       id: 2,
       author: {
-        avatarUrl: 'https://github.com/diego3g.png',
-        name: 'Diego Fernandes',
-        role: 'CTO @ Rocketseat',
+        avatarUrl: 'https://github.com/guilhermezuriel.png',
+        name: 'Guilherme Zuriel',
+        role: 'Dev Junior',
       },
       content: [
         { type: 'paragraph', content: 'Fala galera' },
         {
           type: 'paragraph',
-          content: 'Acabei de subir mais um projeto no meu portifa, galera!',
+          content: 'Aprendendo mais do React!',
         },
-        { type: 'link', content: 'james.design/doctorcare' },
+        { type: 'link', content: 'github.com/guilhermezuriel' },
       ],
       publishedAt: new Date('2024-06-12 20:00:00'),
     },
