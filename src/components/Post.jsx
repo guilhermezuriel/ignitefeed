@@ -25,6 +25,7 @@ const Post = ({ author, publishedAt, content }) => {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
   }
   function deleteComment(commentToDelete) {
@@ -34,6 +35,10 @@ const Post = ({ author, publishedAt, content }) => {
 
     setComments(commentsWithoutOne);
   }
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity('Esse campo é obrigatório');
+  }
+  const isNewCommentEmpty = newCommmentText.length === 0;
   return (
     <article className={styles.post}>
       <header>
@@ -71,8 +76,12 @@ const Post = ({ author, publishedAt, content }) => {
           value={newCommmentText}
           name="comment"
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
-        {comments && <button type="submit">Comentar</button>}
+        <button type="submit" disabled={isNewCommentEmpty}>
+          Comentar
+        </button>
       </form>
       <div className={styles.commentList}>
         {comments.map((comment) => {
